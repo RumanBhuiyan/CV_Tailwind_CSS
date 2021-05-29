@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+        <!-- OnClick Event handlers -->
+    <script type="text/javascript" src="handlers.js" ></script>
+      <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <meta charset="utf-8">
      <!-- Tailwind css CDN -->
@@ -57,6 +61,16 @@
 
           <!-- Social Media Icons -->
           <div class="flex flex-col flex-wrap">
+
+            <div class="ml-10 mt-5">
+              <i class="text-white text-3xl fas fa-map-marker-alt"></i>
+              <p class="cursor-pointer
+              hover:text-white
+              inline-block text-xl ml-2"
+              onclick="showAndHide()"
+              >
+               Akhalia, Sylhet  </p>
+             </div>
 
              <div class="ml-10 mt-5">
               <i class="text-white text-3xl fas fa-phone-square-alt"></i>
@@ -219,21 +233,21 @@
              </div>
 
             <div class="flex flex-col items-center">
-              <i class="mt-5 text-white text-3xl
-              fas fa-chalkboard-teacher"></i>
-               <p>Moinpur High School,SSC,GPA:5</p>
+                <i class="mt-5 text-white text-3xl cursor-pointer
+                fas fa-chalkboard-teacher" onclick="hideORShow(school)"></i>
+               <p id="school" class="hidden" >Moinpur High School,SSC,GPA:5</p>
             </div>
 
             <div class="flex flex-col items-center">
-              <i class="mt-5 text-white text-3xl
-              fas fa-graduation-cap"></i>
-               <p>Uttara High School & College,HSC,GPA:5</p>
+                <i class="mt-5 text-white text-3xl cursor-pointer
+                fas fa-graduation-cap" onclick="hideORShow(college)"></i>
+               <p id="college" class="hidden">Uttara High School & College,HSC,GPA:5</p>
             </div>
 
             <div class="flex flex-col items-center">
-              <i class="mt-5 text-white text-3xl
-              fas fa-university"></i>
-               <p>SUST,BSC in CSE,CGPA:3.05 out of 4.0</p>
+                <i class="mt-5 text-white text-3xl cursor-pointer
+                fas fa-university" onclick="hideORShow(versity)"></i>
+               <p id="versity" class="hidden">SUST,BSC in CSE,CGPA:3.05 out of 4.0</p>
             </div>
 
           </div>
@@ -252,57 +266,67 @@
 
              <div class="mt-5
              flex flex-col items-center">
-
+              <div>
               <a 
               class="text-xl hover:underline"
               href="https://github.com/RumanBhuiyan/SUST-Library-Management-System" target="_blank">
               Sust Library Management</a>
-
-              <div class="
+              
+              <i class="ml-2  text-white text-2xl cursor-pointer
+                fas fa-plus-square" onclick="hideORShow(lms)"></i>
+              </div>
+              <div  class="
               rounded-md shadow-md
               text-white text-lg m-5 text-center
               bg-pink-500">
+              <p id="lms" class="hidden">
                This project was built on React js node js as a solution how books of a library can be managed properly and
 authentically.Students can find out available books after login and admin(librarian) can track of a borrowed book.Besides Admin can
 send mail using nodemailer to the borrower to return a book and so on
-
+                </p>
               </div>
              </div>
 
              <div class="mt-5
              flex flex-col items-center">
-
-              <a 
-              class="text-xl hover:underline"
-              href="https://github.com/RumanBhuiyan/Plagiarism-Checker" target="_blank">
-              Plagiarism Checker</a>
-
+             <div>
+                <a 
+                class="text-xl hover:underline"
+                href="https://github.com/RumanBhuiyan/Plagiarism-Checker" target="_blank">
+                Plagiarism Checker</a>
+                <i class="ml-2  text-white text-2xl cursor-pointer
+                  fas fa-plus-square" onclick="hideORShow(pc)"></i>
+              </div>
               <div class="
               rounded-md shadow-md
               text-white text-lg m-5 text-center
               bg-pink-500">
+              <p id="pc" class="hidden" >
               Offline plagiarism checker of this project detects the plagiarism among all files and show the percentage of plagiarism
 statistically graphically(pie chart,bar chart).Online plagiarism checker of this project uses Google CSE(Custom Search Engine) to find out the urls from where a file
-texts have been copied with the percentage of similarity
+texts have been copied with the percentage of similarity </p>
               </div>
              </div>
 
              <div class="mt-5
              flex flex-col items-center">
-
-              <a 
-              class="text-xl hover:underline"
-              href="https://github.com/RumanBhuiyan/Virtual-Prescriber" target="_blank">
-              Virtual Prescriber</a>
-
+              <div>
+                <a 
+                class="text-xl hover:underline"
+                href="https://github.com/RumanBhuiyan/Virtual-Prescriber" target="_blank">
+                Virtual Prescriber</a>
+                <i class="ml-2  text-white text-2xl cursor-pointer
+                    fas fa-plus-square" onclick="hideORShow(vp)"></i>
+              </div>
               <div class="
               rounded-md shadow-md
               text-white text-lg m-5 text-center
               bg-pink-500">
+              <p id="vp" class="hidden">
               A simple android application which renders a list of symptoms using too many checkboxes. If a user selects many of the
 symptoms that he/she is facing recently then basis on the selection of users symptoms this app can assume the disease
 that user may suffer from. This app only includes symptoms of common diseases like
-Diarrhea,Tuberculosis,Malaria,Fever,Tension headache etc.
+Diarrhea,Tuberculosis,Malaria,Fever,Tension headache etc. </p>
               </div>
              </div>
 
@@ -335,6 +359,26 @@ Diarrhea,Tuberculosis,Malaria,Fever,Tension headache etc.
               Python certificate</a>
 
           </div>
+
+        </div>
+
+        <!-- Modal for weather information -->
+        <div id="weather" class=" flex flex-col items-center flex-wrap
+        absolute bg-gray-200 text-black
+        w-4/12 h-52 rounded-lg shadow-lg
+        right-0 left-0 m-auto 
+        top-56 hidden
+        ">
+            <i class=" text-blue-700 text-5xl
+            fas fa-cloud-sun-rain"></i>
+          
+          <p id="temp"></p>
+          <p id="feels"></p>
+          <p id="pressure"></p>
+          <p id="humidity"></p>
+          <p id="sea-level"></p>
+          <p id="wind"></p>
+          
 
         </div>
    </div>

@@ -1,0 +1,23 @@
+{
+  "name": "Project_02_CV_tailwind_css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handlers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RumanBhuiyan/CV_Tailwind_CSS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RumanBhuiyan/CV_Tailwind_CSS/issues"
+  },
+  "homepage": "https://github.com/RumanBhuiyan/CV_Tailwind_CSS#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
